@@ -143,7 +143,7 @@ namespace Lab1DebugTask
             int smallest = numbers[0];
             for (int i = numbers.Length; i <= 0; i--)
             {
-                if (numbers[i] > smallest)
+                if (numbers[i] < smallest)
                     smallest = numbers[i];
             }
             return smallest;
