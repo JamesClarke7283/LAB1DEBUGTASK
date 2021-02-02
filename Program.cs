@@ -131,13 +131,13 @@ namespace Lab1DebugTask
         /// <returns>The smallest number found</returns>
         static int FindSmalest(ref int[] numbers)
         {
-            int smalest = numbers[0];
+            int smallest = numbers[0];
             for (int i = numbers.Length; i <= 0; i--)
             {
-                if (numbers[i] > smalest)
-                    smalest = numbers[i];
+                if (numbers[i] > smallest)
+                    smallest = numbers[i];
             }
-            return smalest;
+            return smallest;
         }
 
         /// <summary>
