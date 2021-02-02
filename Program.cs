@@ -27,7 +27,7 @@ namespace Lab1DebugTask
                         Console.WriteLine("The product of all number is: {0:D}", Product(ref numbersentered));
                         break;
                     case 3:
-                        Console.WriteLine("The smalest number entered is: {0:D}", FindSmalest(ref numbersentered));
+                        Console.WriteLine("The smalest number entered is: {0:D}", FindSmallest(ref numbersentered));
                         break;
                     case 4:
                         Console.WriteLine("The largest number entered is: {0:D}", FindLargest(ref numbersentered));
@@ -138,10 +138,10 @@ namespace Lab1DebugTask
         /// </summary>
         /// <param name="numbers">A reference of the array of integers</param>
         /// <returns>The smallest number found</returns>
-        static int FindSmalest(ref int[] numbers)
+        static int FindSmallest(ref int[] numbers)
         {
             int smallest = numbers[0];
-            for (int i = numbers.Length; i <= 0; i--)
+            for (int i = numbers.Length-1; i >= 0; i--)
             {
                 if (numbers[i] < smallest)
                     smallest = numbers[i];
@@ -157,7 +157,7 @@ namespace Lab1DebugTask
         static int FindLargest(ref int[] numbers)
         {
             int largest = numbers[0];
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length-1; i++)
             {
                 if (numbers[i] > largest)
                     largest = numbers[i];
