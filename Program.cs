@@ -113,7 +113,13 @@ namespace Lab1DebugTask
             int Product = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
+                if (i == 0)
+                {
+                    Product = numbers[0];
+                }else{
+
                 Product *= numbers[i];
+                }
             }
             return Product;
         }
