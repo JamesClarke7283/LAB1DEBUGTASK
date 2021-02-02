@@ -9,11 +9,7 @@ namespace Lab1DebugTask
             int menuselection = 0;
 
             int[] numbersentered = new int[5];
-            Console.WriteLine("Enter five numbers");
-            for (int i = 0; i < 5; i++)
-            {
-                numbersentered[i] = ReadNumber();
-            }
+            numbersentered = PromptNumbers();
 
             while (menuselection != -1)
             {
@@ -22,11 +18,7 @@ namespace Lab1DebugTask
                 {
                     case 0:
                     case 5:
-                        Console.WriteLine("Enter five numbers");
-                        for (int i = 1; i < 5; i++)
-                        {
-                            numbersentered[i] = ReadNumber();
-                        }
+                        numbersentered = PromptNumbers();
                         break;
                     case 1:
                         Console.WriteLine("The product of all number is: {0:D}", Sum(ref numbersentered));
@@ -47,6 +39,7 @@ namespace Lab1DebugTask
             }
         }
 
+
         /// <summary>
         /// Displays the menu items.
         /// </summary>
@@ -63,6 +56,22 @@ namespace Lab1DebugTask
             int.TryParse(Console.ReadLine(), out menuselection);
 
             return menuselection;
+        }
+
+        /// <summary>
+        /// Prompts the user for 5 numbers
+        /// </summary>
+        /// <remarks>The program only exits once 5 integer numbers have been entered</remarks>
+        /// <returns>Nothing</returns>
+        static int[] PromptNumbers()
+        {
+             int[] numbers = new int[5];
+            Console.WriteLine("Enter five numbers");
+            for (int i = 0; i < 5; i++)
+            {
+                numbers[i] = ReadNumber();
+            }
+            return numbers;
         }
 
         /// <summary>
